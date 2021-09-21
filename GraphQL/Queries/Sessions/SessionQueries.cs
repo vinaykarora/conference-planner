@@ -15,13 +15,21 @@ namespace ConferencePlanner.GraphQL.Queries.Sessions
     public class SessionQueries
     {
         [UseApplicationDbContext]
-        public Task<List<Session>> GetSessions([ScopedService] ApplicationDbContext context) =>
-            context.Sessions.ToListAsync();
-
-        public Task<Session> GetSessionAsync(
-            [ID(nameof(Session))] int id,
-            SessionByIdDataLoader dataLoader,
+        public async Task<IEnumerable<Session>> GetSessionsAsync(
+            [ScopedService] ApplicationDbContext context,
             CancellationToken cancellationToken) =>
-            dataLoader.LoadAsync(id, cancellationToken);
+            await context.Sessions.ToListAsync(cancellationToken);
+
+        public Task<Session> GetSessionByIdAsync(
+            [ID(nameof(Session))] int id,
+            SessionByIdDataLoader sessionById,
+            CancellationToken cancellationToken) =>
+            sessionById.LoadAsync(id, cancellationToken);
+
+        public async Task<IEnumerable<Session>> GetSessionsByIdAsync(
+            [ID(nameof(Session))] int[] ids,
+            SessionByIdDataLoader sessionById,
+            CancellationToken cancellationToken) =>
+            await sessionById.LoadAsync(ids, cancellationToken);
     }
 }

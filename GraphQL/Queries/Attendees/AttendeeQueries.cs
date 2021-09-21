@@ -15,13 +15,21 @@ namespace ConferencePlanner.GraphQL.Queries.Attendees
     public class AttendeeQueries
     {
         [UseApplicationDbContext]
-        public Task<List<Attendee>> GetAttendees([ScopedService] ApplicationDbContext context) =>
-            context.Attendees.ToListAsync();
-
-        public Task<Attendee> GetAttendeeAsync(
-            [ID(nameof(Attendee))] int id,
-            AttendeeByIdDataLoader dataLoader,
+        public async Task<IEnumerable<Attendee>> GetAttendeesAsync(
+            [ScopedService] ApplicationDbContext context,
             CancellationToken cancellationToken) =>
-            dataLoader.LoadAsync(id, cancellationToken);
+            await context.Attendees.ToListAsync(cancellationToken);
+
+        public Task<Attendee> GetAttendeeByIdAsync(
+            [ID(nameof(Attendee))] int id,
+            AttendeeByIdDataLoader sessionById,
+            CancellationToken cancellationToken) =>
+            sessionById.LoadAsync(id, cancellationToken);
+
+        public async Task<IEnumerable<Attendee>> GetAttendeesByIdAsync(
+            [ID(nameof(Attendee))] int[] ids,
+            AttendeeByIdDataLoader sessionById,
+            CancellationToken cancellationToken) =>
+            await sessionById.LoadAsync(ids, cancellationToken);
     }
 }
