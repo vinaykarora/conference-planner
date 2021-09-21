@@ -25,10 +25,14 @@ namespace ConferencePlanner.GraphQL
             services.AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseSqlite("Data Source=conferences.db"));
             services
                 .AddGraphQLServer()
-                .AddQueryType<SpeakerQueries>()
+                .AddQueryType(d => d.Name("Query"))
+                    .AddTypeExtension<SpeakerQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
                     .AddTypeExtension<SpeakerMutations>()
+                .AddType<AttendeeType>()
+                .AddType<SessionType>()
                 .AddType<SpeakerType>()
+                .AddType<TrackType>()
                 .EnableRelaySupport()
                 .AddDataLoader<SpeakerByIdDataLoader>()
                 .AddDataLoader<SessionByIdDataLoader>();
