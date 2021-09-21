@@ -21,6 +21,12 @@ namespace ConferencePlanner.GraphQL.Queries.Tracks
             await context.Tracks.ToListAsync(cancellationToken);
 
         [UseApplicationDbContext]
+        [UsePaging]
+        public IQueryable<Track> GetTracksPaginated(
+            [ScopedService] ApplicationDbContext context) =>
+            context.Tracks.OrderBy(t => t.Name);
+
+        [UseApplicationDbContext]
         public Task<Track> GetTrackByNameAsync(
             string name,
             [ScopedService] ApplicationDbContext context,
