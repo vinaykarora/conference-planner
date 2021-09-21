@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using ConferencePlanner.GraphQL.Queries.Speakers;
 using ConferencePlanner.GraphQL.Mutations.Speakers;
 using ConferencePlanner.GraphQL.DataLoader;
+using ConferencePlanner.GraphQL.Mutations.Sessions;
 using ConferencePlanner.GraphQL.Types;
 namespace ConferencePlanner.GraphQL
 {
@@ -28,6 +29,7 @@ namespace ConferencePlanner.GraphQL
                 .AddQueryType(d => d.Name("Query"))
                     .AddTypeExtension<SpeakerQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
+                    .AddTypeExtension<SessionMutations>()
                     .AddTypeExtension<SpeakerMutations>()
                 .AddType<AttendeeType>()
                 .AddType<SessionType>()
