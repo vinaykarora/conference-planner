@@ -2,9 +2,9 @@ using System.Linq;
 using HotChocolate;
 using ConferencePlanner.GraphQL.Data;
 
-namespace ConferencePlanner.GraphQL
+namespace ConferencePlanner.GraphQL.Queries.Speakers
 {
-    public class Query
+    public class SpeakersQuery
     {
         public IQueryable<Speaker> GetSpeakers([Service] ApplicationDbContext context) =>
             context.Speakers;

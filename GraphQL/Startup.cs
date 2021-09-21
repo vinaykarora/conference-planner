@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ConferencePlanner.GraphQL.Queries.Speakers;
+using ConferencePlanner.GraphQL.Mutations.Speakers;
 
 namespace ConferencePlanner.GraphQL
 {
@@ -22,7 +24,8 @@ namespace ConferencePlanner.GraphQL
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=conferences.db"));
             services
                 .AddGraphQLServer()
-                .AddQueryType<Query>();
+                .AddQueryType<SpeakersQuery>()
+                .AddMutationType<SpeakersMutation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
