@@ -1,8 +1,8 @@
-# conference-planner
-GraphQL on ASP.NET Core
+# Conference Planner App 
+Buid GraphQL Server Side using ASP.NET Core and Hot Chocolate
 
-# add a speaker by writing a GraphQL mutation.
-
+# Add a speaker by writing a GraphQL mutation.
+```
 mutation AddSpeaker {
   addSpeaker(input: {
     name: "Speaker Name"
@@ -13,16 +13,17 @@ mutation AddSpeaker {
     }
   }
 }
-
+```
 # Query the names of all the speakers in the database.
-
+```
 query GetSpeakerNames {
   speakers {
     name
   }
 }
-
+```
 # Parallel Query the names of all the speakers in the database.
+```
 query GetSpeakerNamesInParallel {
   a: speakers {
     name
@@ -37,9 +38,9 @@ query GetSpeakerNamesInParallel {
     bio
   }
 }
-
+```
 # Now try out if the new field works right.
-
+```
 query GetSpecificSpeakerById {
   a: speaker(id: 1) {
     name
@@ -48,8 +49,9 @@ query GetSpecificSpeakerById {
     name
   }
 }
-
-# execute the following query
+```
+# Execute the following query
+```
 query GetSpeakerWithSessions {
    speakers {
        name
@@ -58,8 +60,9 @@ query GetSpeakerWithSessions {
        }
    }
 }
-
+```
 # Add sessions
+```
 mutation AddSession{
   addSession(input:{
     title: "The tour of c#",
@@ -70,8 +73,10 @@ mutation AddSession{
     }
   }
 }
-
-# mutation AddTrack{
+```
+# Add new track
+```
+mutation AddTrack{
   addTrack(input:{
      name:"Track 1",
   }){
@@ -84,8 +89,9 @@ mutation AddSession{
         }
     }
   }
-  
+  ```
   # Query Session and speakers
+  ```
   query FindSession{
   sessions{
      id,
@@ -101,8 +107,9 @@ mutation AddSession{
       }
   }
 }
-
+```
 # Schedule session
+```
 mutation ScheduleSession{
   scheduleSession(input: {
     sessionId :"U2Vzc2lvbgppMQ==",
@@ -126,7 +133,9 @@ mutation ScheduleSession{
      }
   }
 }
-
+```
+# Find sessions
+```
 query FindSession{
     sessions{
       nodes{
@@ -139,16 +148,18 @@ query FindSession{
     }
   }
 }
-
-# test uppercase middleware
+```
+# Test uppercase middleware
+```
 {
   tracks {
     name
   }
 }
+```
 
-
-# track paginated query
+# Track paginated query
+```
 query GetFirstTrack {
   tracksPaginated(first: 1) {
     edges {
@@ -166,10 +177,10 @@ query GetFirstTrack {
     }
   }
 }
-
+```
 
 # Fetch a specific track and get the first session of this track:
-
+```
 query GetTrackWithSessions {
   trackById(id: "VHJhY2sKaTI=") {
     id
@@ -180,8 +191,9 @@ query GetTrackWithSessions {
     }
   }
 }
-
+```
 # Get Sessions Containing 'Tour' In Title
+```
 query GetSessionsContainingTourInTitle {
   sessions(where: { title: { contains: "tour" } }) {
     nodes {
@@ -189,9 +201,10 @@ query GetSessionsContainingTourInTitle {
     }
   }
 }
-
+```
 
 # Register Attendee
+```
 mutation RegisterAttendee{
   registerAttendee(input:{
        emailAddress:"vin.aroar@gmail.com",
@@ -208,8 +221,10 @@ mutation RegisterAttendee{
     }
   }
 }
+```
 
-# Checkin Attendee
+# CheckIn Attendee
+```
 mutation CheckinAttendee{
   checkInAttendee(input:{
        attendeeId:"QXR0ZW5kZWUKaTE=",
@@ -225,9 +240,10 @@ mutation CheckinAttendee{
     }
   }
 }
+```
 
-
-# on Session Scheduled
+# On Session Scheduled
+```
 subscription {
   onSessionScheduled {
     title
@@ -261,4 +277,5 @@ mutation ScheduleSession {
     }
   }
 }
+```
 
