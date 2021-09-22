@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using ConferencePlanner.GraphQL.DataLoader;
 using System.Threading;
+using ConferencePlanner.GraphQL.Types;
 using HotChocolate;
 using HotChocolate.Types;
 using HotChocolate.Types.Relay;
@@ -15,6 +16,7 @@ namespace ConferencePlanner.GraphQL.Queries.Sessions
     public class SessionQueries
     {
         [UseApplicationDbContext]
+        [UsePaging(typeof(NonNullType<SessionType>))]
         public async Task<IEnumerable<Session>> GetSessionsAsync(
             [ScopedService] ApplicationDbContext context,
             CancellationToken cancellationToken) =>

@@ -128,12 +128,14 @@ mutation ScheduleSession{
 }
 
 query FindSession{
-  sessions{
-    id,
-    title,
-    track{
+    sessions{
+      nodes{
       id,
-      name
+      title,
+      track{
+        id,
+        name
+      }
     }
   }
 }
@@ -164,4 +166,19 @@ query GetFirstTrack {
     }
   }
 }
+
+
+# Fetch a specific track and get the first session of this track:
+
+query GetTrackWithSessions {
+  trackById(id: "VHJhY2sKaTI=") {
+    id
+    sessions(first: 1) {
+      nodes {
+        title
+      }
+    }
+  }
+}
+
 
