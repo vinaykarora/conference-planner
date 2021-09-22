@@ -181,4 +181,13 @@ query GetTrackWithSessions {
   }
 }
 
+# Get Sessions Containing 'Tour' In Title
+query GetSessionsContainingTourInTitle {
+  sessions(where: { title: { contains: "tour" } }) {
+    nodes {
+      title
+    }
+  }
+}
+
 
