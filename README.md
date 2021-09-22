@@ -191,3 +191,37 @@ query GetSessionsContainingTourInTitle {
 }
 
 
+# Register Attendee
+mutation RegisterAttendee{
+  registerAttendee(input:{
+       emailAddress:"vin.aroar@gmail.com",
+       firstName:"Vinay",
+       lastName:"Arora",
+       userName:"vin.aroar"
+  }){
+    attendee{
+      id
+    },
+    errors{
+      code,
+      message
+    }
+  }
+}
+
+# Checkin Attendee
+mutation CheckinAttendee{
+  checkInAttendee(input:{
+       attendeeId:"QXR0ZW5kZWUKaTE=",
+      sessionId:"U2Vzc2lvbgppMQ=="
+  }){
+    attendee{
+      id,
+      emailAddress
+    },
+    errors{
+      code,
+      message
+    }
+  }
+}

@@ -10,13 +10,15 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ConferencePlanner.GraphQL.Queries.Speakers;
-using ConferencePlanner.GraphQL.Queries.Sessions;
+
 using ConferencePlanner.GraphQL.Queries.Attendees;
+using ConferencePlanner.GraphQL.Queries.Sessions;
+using ConferencePlanner.GraphQL.Queries.Speakers;
 using ConferencePlanner.GraphQL.Queries.Tracks;
 
-using ConferencePlanner.GraphQL.Mutations.Speakers;
+using ConferencePlanner.GraphQL.Mutations.Attendees;
 using ConferencePlanner.GraphQL.Mutations.Sessions;
+using ConferencePlanner.GraphQL.Mutations.Speakers;
 using ConferencePlanner.GraphQL.Mutations.Tracks;
 
 using ConferencePlanner.GraphQL.DataLoader;
@@ -33,11 +35,12 @@ namespace ConferencePlanner.GraphQL
             services
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
+                    .AddTypeExtension<AttendeeQueries>()
                     .AddTypeExtension<SpeakerQueries>()
                     .AddTypeExtension<SessionQueries>()
-                    .AddTypeExtension<AttendeeQueries>()
                     .AddTypeExtension<TrackQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
+                    .AddTypeExtension<AttendeeMutations>()
                     .AddTypeExtension<SessionMutations>()
                     .AddTypeExtension<SpeakerMutations>()
                     .AddTypeExtension<TrackMutations>()
