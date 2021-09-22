@@ -225,3 +225,40 @@ mutation CheckinAttendee{
     }
   }
 }
+
+
+# on Session Scheduled
+subscription {
+  onSessionScheduled {
+    title
+    startTime
+  }
+}
+
+
+query GetSessionsAndTracks {
+  sessions {
+    nodes {
+      id
+    }
+  }
+  tracks {
+      id
+  }
+}
+
+mutation ScheduleSession {
+  scheduleSession(
+    input: {
+      sessionId: "U2Vzc2lvbgppMQ=="
+      trackId: "VHJhY2sKaTE="
+      startTime: "2021-10-01T16:00"
+      endTime: "2021-10-01T17:00"
+    }
+  ) {
+    session {
+      title
+    }
+  }
+}
+

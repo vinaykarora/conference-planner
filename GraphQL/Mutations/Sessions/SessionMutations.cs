@@ -3,7 +3,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using ConferencePlanner.GraphQL.Common;
 using ConferencePlanner.GraphQL.Data;
+using ConferencePlanner.GraphQL.Subscriptions;
+using ConferencePlanner.GraphQL.Subscriptions.Sessions;
 using HotChocolate;
+using HotChocolate.Subscriptions;
 using HotChocolate.Types;
 
 namespace ConferencePlanner.GraphQL.Mutations.Sessions
@@ -52,7 +55,8 @@ namespace ConferencePlanner.GraphQL.Mutations.Sessions
         [UseApplicationDbContext]
         public async Task<ScheduleSessionPayload> ScheduleSessionAsync(
             ScheduleSessionInput input,
-            [ScopedService] ApplicationDbContext context)
+            [ScopedService] ApplicationDbContext context,
+            [Service] ITopicEventSender eventSender)
         {
             if (input.EndTime < input.StartTime)
             {
@@ -68,17 +72,19 @@ namespace ConferencePlanner.GraphQL.Mutations.Sessions
                     new UserError("Session not found.", "SESSION_NOT_FOUND"));
             }
 
-            int? initialTrackId = session.TrackId;
-
-
             session.TrackId = input.TrackId;
             session.StartTime = input.StartTime;
             session.EndTime = input.EndTime;
 
             await context.SaveChangesAsync();
 
+            await eventSender.SendAsync(
+                nameof(SessionSubscriptions.OnSessionScheduledAsync),
+                session.Id);
+
             return new ScheduleSessionPayload(session);
         }
+
 
     }
 }
