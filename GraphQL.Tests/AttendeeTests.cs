@@ -62,10 +62,10 @@ namespace GraphQL.Tests
                 mutation RegisterAttendee {
                     registerAttendee(
                         input: {
-                            emailAddress: ""michael@chillicream.com""
-                                firstName: ""michael""
-                                lastName: ""staib""
-                                userName: ""michael3""
+                            emailAddress: ""vin.aroar@gmail.com""
+                                firstName: ""vinay""
+                                lastName: ""arora""
+                                userName: ""vinay.arora""
                             })
                     {
                         attendee {
