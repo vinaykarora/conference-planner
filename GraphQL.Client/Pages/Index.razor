@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject ConferenceClient ConferenceClient;
+@implements IDisposable
 
 <h1>Hello, world!</h1>
 
@@ -8,18 +9,33 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 <ul>
-    @foreach (string title in titles)
-    {
-        <li>@title</li>
-    }
+@foreach (var title in titles)
+{
+    <li>@title</li>
+}
 </ul>
 
 @code {
     private string[] titles = Array.Empty<string>();
+    private IDisposable storeSession;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        var result = await ConferenceClient.GetSessions.ExecuteAsync();
-        titles = result.Data.Sessions.Nodes.Select(t => t.Title).ToArray();
+        storeSession =
+            ConferenceClient
+                .GetSessions
+                .Watch(StrawberryShake.ExecutionStrategy.CacheFirst)
+                .Where(t => !t.Errors.Any())
+                .Select(t => t.Data.Sessions.Nodes.Select(t => t.Title).ToArray())
+                .Subscribe(result =>
+                {
+                    titles = result;
+                    StateHasChanged();
+                });
+    }
+
+    public void Dispose()
+    {
+        storeSession?.Dispose();
     }
 }
