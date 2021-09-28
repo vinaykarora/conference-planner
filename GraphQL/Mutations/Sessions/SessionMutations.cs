@@ -86,5 +86,25 @@ namespace ConferencePlanner.GraphQL.Mutations.Sessions
         }
 
 
+        [UseApplicationDbContext]
+        public async Task<RenameSessionPayload> RenameSessionAsync(
+                    RenameSessionInput input,
+                    [ScopedService] ApplicationDbContext context,
+                    CancellationToken cancellationToken)
+        {
+            Session session = await context.Sessions.FindAsync(input.SessionId);
+
+            if (session is null)
+            {
+                return new RenameSessionPayload(
+                    new UserError("Session not found.", "SESSION_NOT_FOUND"));
+            }
+
+            session.Title = input.Title;
+
+            await context.SaveChangesAsync(cancellationToken);
+
+            return new RenameSessionPayload(session);
+        }
     }
 }

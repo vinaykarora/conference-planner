@@ -4,6 +4,232 @@
 namespace GraphQL.Client
 {
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionResult : global::System.IEquatable<RenameSessionResult>, IRenameSessionResult
+    {
+        public RenameSessionResult(global::GraphQL.Client.IRenameSession_RenameSession renameSession)
+        {
+            RenameSession = renameSession;
+        }
+
+        public global::GraphQL.Client.IRenameSession_RenameSession RenameSession { get; }
+
+        public virtual global::System.Boolean Equals(RenameSessionResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (RenameSession.Equals(other.RenameSession));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((RenameSessionResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * RenameSession.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSession_RenameSession_RenameSessionPayload : global::System.IEquatable<RenameSession_RenameSession_RenameSessionPayload>, IRenameSession_RenameSession_RenameSessionPayload
+    {
+        public RenameSession_RenameSession_RenameSessionPayload(global::GraphQL.Client.IRenameSession_RenameSession_Session? session)
+        {
+            Session = session;
+        }
+
+        public global::GraphQL.Client.IRenameSession_RenameSession_Session? Session { get; }
+
+        public virtual global::System.Boolean Equals(RenameSession_RenameSession_RenameSessionPayload? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Session is null && other.Session is null) || Session != null && Session.Equals(other.Session)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((RenameSession_RenameSession_RenameSessionPayload)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Session != null)
+                {
+                    hash ^= 397 * Session.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSession_RenameSession_Session_Session : global::System.IEquatable<RenameSession_RenameSession_Session_Session>, IRenameSession_RenameSession_Session_Session
+    {
+        public RenameSession_RenameSession_Session_Session(global::System.String id, global::System.String title)
+        {
+            Id = id;
+            Title = title;
+        }
+
+        public global::System.String Id { get; }
+
+        public global::System.String Title { get; }
+
+        public virtual global::System.Boolean Equals(RenameSession_RenameSession_Session_Session? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id.Equals(other.Id)) && Title.Equals(other.Title);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((RenameSession_RenameSession_Session_Session)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Title.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IRenameSessionResult
+    {
+        public global::GraphQL.Client.IRenameSession_RenameSession RenameSession { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IRenameSession_RenameSession
+    {
+        public global::GraphQL.Client.IRenameSession_RenameSession_Session? Session { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IRenameSession_RenameSession_RenameSessionPayload : IRenameSession_RenameSession
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface ISessionInfo
+    {
+        public global::System.String Id { get; }
+
+        public global::System.String Title { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IRenameSession_RenameSession_Session : ISessionInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IRenameSession_RenameSession_Session_Session : IRenameSession_RenameSession_Session
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetSessionsResult : global::System.IEquatable<GetSessionsResult>, IGetSessionsResult
     {
         public GetSessionsResult(global::GraphQL.Client.IGetSessions_Sessions? sessions)
@@ -145,10 +371,13 @@ namespace GraphQL.Client
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetSessions_Sessions_Nodes_Session : global::System.IEquatable<GetSessions_Sessions_Nodes_Session>, IGetSessions_Sessions_Nodes_Session
     {
-        public GetSessions_Sessions_Nodes_Session(global::System.String title)
+        public GetSessions_Sessions_Nodes_Session(global::System.String id, global::System.String title)
         {
+            Id = id;
             Title = title;
         }
+
+        public global::System.String Id { get; }
 
         public global::System.String Title { get; }
 
@@ -169,7 +398,7 @@ namespace GraphQL.Client
                 return false;
             }
 
-            return (Title.Equals(other.Title));
+            return (Id.Equals(other.Id)) && Title.Equals(other.Title);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -197,6 +426,7 @@ namespace GraphQL.Client
             unchecked
             {
                 int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Title.GetHashCode();
                 return hash;
             }
@@ -230,14 +460,172 @@ namespace GraphQL.Client
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetSessions_Sessions_Nodes
+    public interface IGetSessions_Sessions_Nodes : ISessionInfo
     {
-        public global::System.String Title { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetSessions_Sessions_Nodes_Session : IGetSessions_Sessions_Nodes
     {
+    }
+
+    /// <summary>
+    /// Represents the operation service of the RenameSession GraphQL operation
+    /// <code>
+    /// mutation RenameSession($sessionId: ID!, $title: String!) {
+    ///   renameSession(input: { sessionId: $sessionId, title: $title }) {
+    ///     __typename
+    ///     session {
+    ///       __typename
+    ///       ... SessionInfo
+    ///       ... on Session {
+    ///         id
+    ///       }
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment SessionInfo on Session {
+    ///   id
+    ///   title
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionMutationDocument : global::StrawberryShake.IDocument
+    {
+        private RenameSessionMutationDocument()
+        {
+        }
+
+        public static RenameSessionMutationDocument Instance { get; } = new RenameSessionMutationDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x52, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x28, 0x24, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x3a, 0x20, 0x49, 0x44, 0x21, 0x2c, 0x20, 0x24, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x72, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x28, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x20, 0x7b, 0x20, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x3a, 0x20, 0x24, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x2c, 0x20, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x20, 0x7d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "95aed51a797da325664221349cc9e099");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the RenameSession GraphQL operation
+    /// <code>
+    /// mutation RenameSession($sessionId: ID!, $title: String!) {
+    ///   renameSession(input: { sessionId: $sessionId, title: $title }) {
+    ///     __typename
+    ///     session {
+    ///       __typename
+    ///       ... SessionInfo
+    ///       ... on Session {
+    ///         id
+    ///       }
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment SessionInfo on Session {
+    ///   id
+    ///   title
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionMutation : global::GraphQL.Client.IRenameSessionMutation
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IRenameSessionResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _iDFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public RenameSessionMutation(global::StrawberryShake.IOperationExecutor<IRenameSessionResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _iDFormatter = serializerResolver.GetInputValueFormatter("ID");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IRenameSessionResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IRenameSessionResult>> ExecuteAsync(global::System.String sessionId, global::System.String title, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(sessionId, title);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IRenameSessionResult>> Watch(global::System.String sessionId, global::System.String title, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(sessionId, title);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.String sessionId, global::System.String title)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("sessionId", FormatSessionId(sessionId));
+            variables.Add("title", FormatTitle(title));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: RenameSessionMutationDocument.Instance.Hash.Value, name: "RenameSession", document: RenameSessionMutationDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatSessionId(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _iDFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatTitle(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the RenameSession GraphQL operation
+    /// <code>
+    /// mutation RenameSession($sessionId: ID!, $title: String!) {
+    ///   renameSession(input: { sessionId: $sessionId, title: $title }) {
+    ///     __typename
+    ///     session {
+    ///       __typename
+    ///       ... SessionInfo
+    ///       ... on Session {
+    ///         id
+    ///       }
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment SessionInfo on Session {
+    ///   id
+    ///   title
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IRenameSessionMutation : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IRenameSessionResult>> ExecuteAsync(global::System.String sessionId, global::System.String title, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IRenameSessionResult>> Watch(global::System.String sessionId, global::System.String title, global::StrawberryShake.ExecutionStrategy? strategy = null);
     }
 
     /// <summary>
@@ -248,12 +636,17 @@ namespace GraphQL.Client
     ///     __typename
     ///     nodes {
     ///       __typename
-    ///       title
+    ///       ... SessionInfo
     ///       ... on Session {
     ///         id
     ///       }
     ///     }
     ///   }
+    /// }
+    /// 
+    /// fragment SessionInfo on Session {
+    ///   id
+    ///   title
     /// }
     /// </code>
     /// </summary>
@@ -266,8 +659,8 @@ namespace GraphQL.Client
 
         public static GetSessionsQueryDocument Instance { get; } = new GetSessionsQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x20, 0x7b, 0x20, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x28, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x7b, 0x20, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x3a, 0x20, 0x41, 0x53, 0x43, 0x20, 0x7d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "113be71812ffe621dc3013a66a1bee29");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x20, 0x7b, 0x20, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x28, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x7b, 0x20, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x3a, 0x20, 0x41, 0x53, 0x43, 0x20, 0x7d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "07c005666d3204a044556d18879ea537");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -286,12 +679,17 @@ namespace GraphQL.Client
     ///     __typename
     ///     nodes {
     ///       __typename
-    ///       title
+    ///       ... SessionInfo
     ///       ... on Session {
     ///         id
     ///       }
     ///     }
     ///   }
+    /// }
+    /// 
+    /// fragment SessionInfo on Session {
+    ///   id
+    ///   title
     /// }
     /// </code>
     /// </summary>
@@ -341,12 +739,17 @@ namespace GraphQL.Client
     ///     __typename
     ///     nodes {
     ///       __typename
-    ///       title
+    ///       ... SessionInfo
     ///       ... on Session {
     ///         id
     ///       }
     ///     }
     ///   }
+    /// }
+    /// 
+    /// fragment SessionInfo on Session {
+    ///   id
+    ///   title
     /// }
     /// </code>
     /// </summary>
@@ -363,13 +766,16 @@ namespace GraphQL.Client
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class ConferenceClient : global::GraphQL.Client.IConferenceClient
     {
+        private readonly global::GraphQL.Client.IRenameSessionMutation _renameSession;
         private readonly global::GraphQL.Client.IGetSessionsQuery _getSessions;
-        public ConferenceClient(global::GraphQL.Client.IGetSessionsQuery getSessions)
+        public ConferenceClient(global::GraphQL.Client.IRenameSessionMutation renameSession, global::GraphQL.Client.IGetSessionsQuery getSessions)
         {
+            _renameSession = renameSession ?? throw new global::System.ArgumentNullException(nameof(renameSession));
             _getSessions = getSessions ?? throw new global::System.ArgumentNullException(nameof(getSessions));
         }
 
         public static global::System.String ClientName => "ConferenceClient";
+        public global::GraphQL.Client.IRenameSessionMutation RenameSession => _renameSession;
         public global::GraphQL.Client.IGetSessionsQuery GetSessions => _getSessions;
     }
 
@@ -379,6 +785,8 @@ namespace GraphQL.Client
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IConferenceClient
     {
+        global::GraphQL.Client.IRenameSessionMutation RenameSession { get; }
+
         global::GraphQL.Client.IGetSessionsQuery GetSessions { get; }
     }
 }
@@ -388,12 +796,120 @@ namespace GraphQL.Client.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class SessionEntity
     {
-        public SessionEntity(global::System.String title = default !)
+        public SessionEntity(global::System.String id = default !, global::System.String title = default !)
         {
+            Id = id;
             Title = title;
         }
 
+        public global::System.String Id { get; }
+
         public global::System.String Title { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.RenameSessionResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::GraphQL.Client.State.SessionEntity, RenameSession_RenameSession_Session_Session> _renameSession_RenameSession_Session_SessionFromSessionEntityMapper;
+        public RenameSessionResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::GraphQL.Client.State.SessionEntity, RenameSession_RenameSession_Session_Session> renameSession_RenameSession_Session_SessionFromSessionEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _renameSession_RenameSession_Session_SessionFromSessionEntityMapper = renameSession_RenameSession_Session_SessionFromSessionEntityMapper ?? throw new global::System.ArgumentNullException(nameof(renameSession_RenameSession_Session_SessionFromSessionEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::GraphQL.Client.IRenameSessionResult);
+        public RenameSessionResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is RenameSessionResultInfo info)
+            {
+                return new RenameSessionResult(MapNonNullableIRenameSession_RenameSession(info.RenameSession, snapshot));
+            }
+
+            throw new global::System.ArgumentException("RenameSessionResultInfo expected.");
+        }
+
+        private global::GraphQL.Client.IRenameSession_RenameSession MapNonNullableIRenameSession_RenameSession(global::GraphQL.Client.State.RenameSessionPayloadData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IRenameSession_RenameSession returnValue = default !;
+            if (data.__typename.Equals("RenameSessionPayload", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new RenameSession_RenameSession_RenameSessionPayload(MapIRenameSession_RenameSession_Session(data.Session, snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::GraphQL.Client.IRenameSession_RenameSession_Session? MapIRenameSession_RenameSession_Session(global::StrawberryShake.EntityId? entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId is null)
+            {
+                return null;
+            }
+
+            if (entityId.Value.Name.Equals("Session", global::System.StringComparison.Ordinal))
+            {
+                return _renameSession_RenameSession_Session_SessionFromSessionEntityMapper.Map(snapshot.GetEntity<global::GraphQL.Client.State.SessionEntity>(entityId.Value) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public RenameSessionResultInfo(global::GraphQL.Client.State.RenameSessionPayloadData renameSession, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            RenameSession = renameSession;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::GraphQL.Client.State.RenameSessionPayloadData RenameSession { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new RenameSessionResultInfo(RenameSession, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSession_RenameSession_Session_SessionFromSessionEntityMapper : global::StrawberryShake.IEntityMapper<global::GraphQL.Client.State.SessionEntity, RenameSession_RenameSession_Session_Session>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public RenameSession_RenameSession_Session_SessionFromSessionEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public RenameSession_RenameSession_Session_Session Map(global::GraphQL.Client.State.SessionEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new RenameSession_RenameSession_Session_Session(entity.Id, entity.Title);
+        }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -513,7 +1029,125 @@ namespace GraphQL.Client.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetSessions_Sessions_Nodes_Session(entity.Title);
+            return new GetSessions_Sessions_Nodes_Session(entity.Id, entity.Title);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::GraphQL.Client.IRenameSessionResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IRenameSessionResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _iDParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        public RenameSessionBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IRenameSessionResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _iDParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("ID") ?? throw new global::System.ArgumentException("No serializer for type `ID` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IRenameSessionResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IRenameSessionResult Result, RenameSessionResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IRenameSessionResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IRenameSessionResult, RenameSessionResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::GraphQL.Client.State.RenameSessionPayloadData renameSessionId = default !;
+            _entityStore.Update(session =>
+            {
+                renameSessionId = DeserializeNonNullableIRenameSession_RenameSession(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "renameSession"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new RenameSessionResultInfo(renameSessionId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::GraphQL.Client.State.RenameSessionPayloadData DeserializeNonNullableIRenameSession_RenameSession(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("RenameSessionPayload", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::GraphQL.Client.State.RenameSessionPayloadData(typename, session: UpdateIRenameSession_RenameSession_SessionEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "session"), entityIds));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::StrawberryShake.EntityId? UpdateIRenameSession_RenameSession_SessionEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("Session", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::GraphQL.Client.State.SessionEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::GraphQL.Client.State.SessionEntity(DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "title"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::GraphQL.Client.State.SessionEntity(DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "title"))));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _iDParser.Parse(obj.Value.GetString()!);
         }
     }
 
@@ -523,12 +1157,14 @@ namespace GraphQL.Client.State
         private readonly global::StrawberryShake.IEntityStore _entityStore;
         private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
         private readonly global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IGetSessionsResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _iDParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
         public GetSessionsBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IGetSessionsResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
             _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
             _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _iDParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("ID") ?? throw new global::System.ArgumentException("No serializer for type `ID` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
         }
 
@@ -625,11 +1261,11 @@ namespace GraphQL.Client.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::GraphQL.Client.State.SessionEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::GraphQL.Client.State.SessionEntity(DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "title"))));
+                    session.SetEntity(entityId, new global::GraphQL.Client.State.SessionEntity(DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "title"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::GraphQL.Client.State.SessionEntity(DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "title"))));
+                    session.SetEntity(entityId, new global::GraphQL.Client.State.SessionEntity(DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "title"))));
                 }
 
                 return entityId;
@@ -645,8 +1281,22 @@ namespace GraphQL.Client.State
                 throw new global::System.ArgumentNullException();
             }
 
-            return _stringParser.Parse(obj.Value.GetString()!);
+            return _iDParser.Parse(obj.Value.GetString()!);
         }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class RenameSessionPayloadData
+    {
+        public RenameSessionPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? session = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            Session = session;
+        }
+
+        public global::System.String __typename { get; }
+
+        public global::StrawberryShake.EntityId? Session { get; }
     }
 
     ///<summary>A connection to a list of items.</summary>
@@ -730,6 +1380,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 return new ClientServiceProvider(global::Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(serviceCollection));
             });
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => new global::GraphQL.Client.State.ConferenceClientStoreAccessor(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityIdSerializer>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp))));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.RenameSessionMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.GetSessionsQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.ConferenceClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.IConferenceClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
@@ -745,6 +1396,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 var clientFactory = global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Net.Http.IHttpClientFactory>(parentServices);
                 return new global::StrawberryShake.Transport.Http.HttpConnection(() => clientFactory.CreateClient("ConferenceClient"));
             });
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::GraphQL.Client.State.SessionEntity, global::GraphQL.Client.RenameSession_RenameSession_Session_Session>, global::GraphQL.Client.State.RenameSession_RenameSession_Session_SessionFromSessionEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::GraphQL.Client.State.SessionEntity, global::GraphQL.Client.GetSessions_Sessions_Nodes_Session>, global::GraphQL.Client.State.GetSessions_Sessions_Nodes_SessionFromSessionEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.StringSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.BooleanSerializer>(services);
@@ -763,6 +1415,13 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.TimeSpanSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.JsonSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializerResolver>(services, sp => new global::StrawberryShake.Serialization.SerializerResolver(global::System.Linq.Enumerable.Concat(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(parentServices), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(sp))));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IRenameSessionResult>, global::GraphQL.Client.State.RenameSessionResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IRenameSessionResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.IRenameSessionMutation>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::GraphQL.Client.IRenameSessionResult>, global::GraphQL.Client.State.RenameSessionBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::GraphQL.Client.IRenameSessionResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::GraphQL.Client.IRenameSessionResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::GraphQL.Client.IRenameSessionResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::GraphQL.Client.RenameSessionMutation>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::GraphQL.Client.IRenameSessionMutation>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.RenameSessionMutation>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IGetSessionsResult>, global::GraphQL.Client.State.GetSessionsResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::GraphQL.Client.IGetSessionsResult>>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::GraphQL.Client.IGetSessionsQuery>(sp));

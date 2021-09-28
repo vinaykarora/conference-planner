@@ -28,6 +28,7 @@ type Mutation {
   checkInAttendee(input: CheckInAttendeeInput!): CheckInAttendeePayload!
   addSession(input: AddSessionInput!): AddSessionPayload!
   scheduleSession(input: ScheduleSessionInput!): ScheduleSessionPayload!
+  renameSession(input: RenameSessionInput!): RenameSessionPayload!
   addSpeaker(input: AddSpeakerInput!): AddSpeakerPayload!
   addTrack(input: AddTrackInput!): AddTrackPayload!
   renameTrack(input: RenameTrackInput!): RenameTrackPayload!
@@ -313,16 +314,6 @@ input AttendeeFilterInput {
   sessionsAttendees: ListFilterInputTypeOfSessionAttendeeFilterInput
 }
 
-type RenameTrackPayload {
-  track: Track
-  errors: [UserError!]
-}
-
-type AddTrackPayload {
-  track: Track
-  errors: [UserError!]
-}
-
 input AddSpeakerInput {
   name: String!
   bio: String
@@ -332,6 +323,11 @@ input AddSpeakerInput {
 type AddSpeakerPayload {
   speaker: Speaker
   errors: [UserError!]
+}
+
+input RenameSessionInput {
+  sessionId: ID!
+  title: String!
 }
 
 input ScheduleSessionInput {
@@ -345,6 +341,11 @@ input AddSessionInput {
   title: String!
   abstract: String
   speakerIds: [ID!]!
+}
+
+type RenameSessionPayload {
+  session: Session
+  errors: [UserError!]
 }
 
 type ScheduleSessionPayload {
@@ -379,6 +380,16 @@ type CheckInAttendeePayload {
 
 type RegisterAttendeePayload {
   attendee: Attendee
+  errors: [UserError!]
+}
+
+type AddTrackPayload {
+  track: Track
+  errors: [UserError!]
+}
+
+type RenameTrackPayload {
+  track: Track
   errors: [UserError!]
 }
 

@@ -32,6 +32,12 @@ namespace ConferencePlanner.GraphQL.Mutations.Tracks
             CancellationToken cancellationToken)
         {
             Track track = await context.Tracks.FindAsync(input.Id);
+            if (track is null)
+            {
+                return new RenameTrackPayload(
+                  new UserError[] { new UserError("Track not found.", "TRACK_NOT_FOUND") });
+            }
+
             track.Name = input.Name;
 
             await context.SaveChangesAsync(cancellationToken);

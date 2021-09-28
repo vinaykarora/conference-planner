@@ -1,7 +1,12 @@
 query GetSessions {
   sessions(order: { title: ASC }) {
     nodes {
-      title
+      ...SessionInfo
     }
   }
+}
+
+fragment SessionInfo on Session {
+  id
+  title
 }
