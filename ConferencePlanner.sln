@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL", "GraphQL\GraphQL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Tests", "GraphQL.Tests\GraphQL.Tests.csproj", "{FB0641DE-82A6-48C0-95A2-1C22E563D5FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Client", "GraphQL.Client\GraphQL.Client.csproj", "{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{FB0641DE-82A6-48C0-95A2-1C22E563D5FE}.Release|x64.Build.0 = Release|Any CPU
 		{FB0641DE-82A6-48C0-95A2-1C22E563D5FE}.Release|x86.ActiveCfg = Release|Any CPU
 		{FB0641DE-82A6-48C0-95A2-1C22E563D5FE}.Release|x86.Build.0 = Release|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Debug|x64.Build.0 = Debug|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Debug|x86.Build.0 = Debug|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Release|x64.ActiveCfg = Release|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Release|x64.Build.0 = Release|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1467D37-AC28-4F5A-9EF1-2B25160CE3D2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
