@@ -1,7 +1,25 @@
 ﻿@page "/"
+@inject ConferenceClient ConferenceClient;
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<ul>
+    @foreach (string title in titles)
+    {
+        <li>@title</li>
+    }
+</ul>
+
+@code {
+    private string[] titles = Array.Empty<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await ConferenceClient.GetSessions.ExecuteAsync();
+        titles = result.Data.Sessions.Nodes.Select(t => t.Title).ToArray();
+    }
+}
