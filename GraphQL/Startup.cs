@@ -30,10 +30,25 @@ namespace ConferencePlanner.GraphQL
 {
     public class Startup
     {
+        private const string _BlazorClientPolicy = "GraphQL Client App";
+        private const string _BlazorClientBaseUri = "http://localhost:5002";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+             {
+                 options.AddPolicy(name: _BlazorClientPolicy,
+                                   builder =>
+                                   {
+                                       builder.WithOrigins(_BlazorClientBaseUri)
+                                       .AllowAnyHeader()
+                                       .AllowAnyMethod()
+                                       .AllowCredentials(); ;
+                                   });
+             });
+
             services.AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseSqlite("Data Source=conferences.db"));
             services
                 .AddGraphQLServer()
@@ -71,7 +86,7 @@ namespace ConferencePlanner.GraphQL
             }
             app.UseWebSockets();
             app.UseRouting();
-
+            app.UseCors(_BlazorClientPolicy);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGraphQL();
