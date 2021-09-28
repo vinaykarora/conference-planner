@@ -1,7 +1,17 @@
-# Conference Planner App 
+# Conference Planner App
+
 Buid GraphQL Server Side using ASP.NET Core and Hot Chocolate
 
+```
+dotnet graphql init https://localhost:5001/graphql/ -n ConferenceClient -p GraphQL.Client
+```
+
+```
+dotnet graphql update -u https://localhost:5001/graphql/ -p GraphQL.Client
+```
+
 # Add a speaker by writing a GraphQL mutation.
+
 ```
 mutation AddSpeaker {
   addSpeaker(input: {
@@ -14,7 +24,9 @@ mutation AddSpeaker {
   }
 }
 ```
+
 # Query the names of all the speakers in the database.
+
 ```
 query GetSpeakerNames {
   speakers {
@@ -22,7 +34,9 @@ query GetSpeakerNames {
   }
 }
 ```
+
 # Parallel Query the names of all the speakers in the database.
+
 ```
 query GetSpeakerNamesInParallel {
   a: speakers {
@@ -39,7 +53,9 @@ query GetSpeakerNamesInParallel {
   }
 }
 ```
+
 # Now try out if the new field works right.
+
 ```
 query GetSpecificSpeakerById {
   a: speaker(id: 1) {
@@ -50,7 +66,9 @@ query GetSpecificSpeakerById {
   }
 }
 ```
+
 # Execute the following query
+
 ```
 query GetSpeakerWithSessions {
    speakers {
@@ -61,7 +79,9 @@ query GetSpeakerWithSessions {
    }
 }
 ```
+
 # Add sessions
+
 ```
 mutation AddSession{
   addSession(input:{
@@ -74,7 +94,9 @@ mutation AddSession{
   }
 }
 ```
+
 # Add new track
+
 ```
 mutation AddTrack{
   addTrack(input:{
@@ -89,26 +111,30 @@ mutation AddTrack{
         }
     }
   }
-  ```
-  # Query Session and speakers
-  ```
-  query FindSession{
-  sessions{
-     id,
-     title,
-      abstract,
-      duration,
-      endTime,
-      startTime,
-      trackId,
-      speakers{
-        id,
-        name
-      }
-  }
+```
+
+# Query Session and speakers
+
+```
+query FindSession{
+sessions{
+   id,
+   title,
+    abstract,
+    duration,
+    endTime,
+    startTime,
+    trackId,
+    speakers{
+      id,
+      name
+    }
+}
 }
 ```
+
 # Schedule session
+
 ```
 mutation ScheduleSession{
   scheduleSession(input: {
@@ -134,7 +160,9 @@ mutation ScheduleSession{
   }
 }
 ```
+
 # Find sessions
+
 ```
 query FindSession{
     sessions{
@@ -149,7 +177,9 @@ query FindSession{
   }
 }
 ```
+
 # Test uppercase middleware
+
 ```
 {
   tracks {
@@ -159,6 +189,7 @@ query FindSession{
 ```
 
 # Track paginated query
+
 ```
 query GetFirstTrack {
   tracksPaginated(first: 1) {
@@ -180,6 +211,7 @@ query GetFirstTrack {
 ```
 
 # Fetch a specific track and get the first session of this track:
+
 ```
 query GetTrackWithSessions {
   trackById(id: "VHJhY2sKaTI=") {
@@ -192,7 +224,9 @@ query GetTrackWithSessions {
   }
 }
 ```
+
 # Get Sessions Containing 'Tour' In Title
+
 ```
 query GetSessionsContainingTourInTitle {
   sessions(where: { title: { contains: "tour" } }) {
@@ -204,6 +238,7 @@ query GetSessionsContainingTourInTitle {
 ```
 
 # Register Attendee
+
 ```
 mutation RegisterAttendee{
   registerAttendee(input:{
@@ -224,6 +259,7 @@ mutation RegisterAttendee{
 ```
 
 # CheckIn Attendee
+
 ```
 mutation CheckinAttendee{
   checkInAttendee(input:{
@@ -243,6 +279,7 @@ mutation CheckinAttendee{
 ```
 
 # On Session Scheduled
+
 ```
 subscription {
   onSessionScheduled {
@@ -278,4 +315,3 @@ mutation ScheduleSession {
   }
 }
 ```
-

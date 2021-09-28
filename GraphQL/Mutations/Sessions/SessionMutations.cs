@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using ConferencePlanner.GraphQL.Common;
 using ConferencePlanner.GraphQL.Data;
-using ConferencePlanner.GraphQL.Subscriptions;
 using ConferencePlanner.GraphQL.Subscriptions.Sessions;
 using HotChocolate;
 using HotChocolate.Subscriptions;

@@ -3,20 +3,26 @@
 @implements IDisposable
 
 <h1>Sessions</h1>
+<br />
+    <p>Add Session Title:</p>
+    <label>Title: </label> <input @bind-value="@title" />
+    <label>SpeakerIds: </label><input @bind-value="@speakerId" />
+    <button @onclick="OnAddTitle">Add</button>
+<br />
 
 <ul>
 @foreach (ISessionInfo session in sessions)
-{
-    <li><button @onclick="() => OnClickSession(session)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @session.Title</li>
-}
+    {
+            <li><button @onclick="() => OnClickSession(session)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @session.Title</li>
+    }
 </ul>
 
 @if (selectedSession is not null)
 {
-    <br />
-    <p>Edit Session Title:</p>
-    <input @bind-value="@title" />
-    <button @onclick="OnSaveTitle">Save</button>
+            <br />
+            <p>Edit Session Title:</p>
+            <input @bind-value="@title" />
+            <button @onclick="OnSaveTitle">Save</button>
 }
 
 @code {
@@ -24,6 +30,7 @@
     private IDisposable storeSession;
     private ISessionInfo selectedSession;
     private string title;
+    private string speakerId;
 
     protected override void OnInitialized()
     {
@@ -45,6 +52,22 @@
         selectedSession = session;
         title = session.Title;
         StateHasChanged();
+    }
+
+    private async Task OnAddTitle()
+    {
+        var response = await ConferenceClient.AddSession.ExecuteAsync(speakerId.Split(','), title);
+        if(!response.Errors.Any())
+        {
+            speakerId = null;
+            title = null;
+            var result = await ConferenceClient.GetSessions.ExecuteAsync();
+            sessions = result.Data.Sessions.Nodes;
+            StateHasChanged();
+        }
+        else {
+            Console.Write("Errors Count: " + response.Errors.Count());
+        }
     }
 
     private async Task OnSaveTitle()

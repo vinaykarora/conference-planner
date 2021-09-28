@@ -1,0 +1,11 @@
+mutation AddSession($speakerIds: [ID!]!, $title: String!) {
+  addSession(input: { speakerIds: $speakerIds, title: $title }) {
+    session {
+      ...SessionInfo
+    }
+    errors {
+      code
+      message
+    }
+  }
+}
